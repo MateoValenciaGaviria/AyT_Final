@@ -41,20 +41,19 @@
             height: 100%;
             background: #000;
             float: left;
-            position: relative;
         }
     </style>
 
     <script type="text/javascript">
         var audio = new Audio();
-        audio.src = "song.mp3";
+        audio.src = "/src/song.mp3";
         audio.controls = true;
         audio.loop = true;
         audio.autoplay = false;
 
         var canvas, ctx, source, context, analyser, fbc_array, bars, bar_x, bar_width, bar_height;
 
-        window.addEventListener("load", initMp3Player, false);
+        window.addEventListener("click", initMp3Player, false);
 
         function initMp3Player(){
             document.getElementById('audio_box').appendChild(audio);
