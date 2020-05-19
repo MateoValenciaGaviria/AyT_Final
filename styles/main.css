@@ -25,6 +25,8 @@ body{
     margin-top: -100px;
     left: 50%;
     margin-left: -400px;
+    animation: fadeIn 3s;
+    transition: .5s;
 }
 
 .mp3player__usertitle{
@@ -42,11 +44,7 @@ body{
     font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
     text-align: center;
     color: #818181;
-    margin-bottom: 50px;
-}
-
-.mpr3player__button{
-    
+    margin-bottom: 20px;
 }
 
 .mp3player__analyzerrender{
@@ -66,6 +64,7 @@ body{
     outline: none;
     opacity: .03;
     transition: .5s;
+    animation: fadeIn 3s;
 }
 
 .mp3player__audiobox--selected{
@@ -101,10 +100,49 @@ audio{
     box-shadow: 0 2px 25px rgba(0, 0, 0, 10);
     border-color: #818181;
     transition: .5s;
+    margin-top: 30px;
 }
 
 .mp3player__button:hover{
     background-color: #878686;
     color: #131313;
     transition: .5s;
+}
+
+.mp3player__refcontainer{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    width: 800px;
+    height: 400px;
+    top: 50%;
+    margin-top: -200px;
+    left: 50%;
+    margin-left: -400px;
+    animation: fadeIn 3s;
+}
+
+.mp3player__link{
+    color: #fff;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut{
+    from{
+        opacity: 1;
+    }
+
+    to{
+        opacity: 0;
+    }
 }

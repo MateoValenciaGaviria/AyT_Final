@@ -1,7 +1,7 @@
 var audio = new Audio();
 audio.src = "./src/audio.mp3";
 audio.controls = true;
-audio.loop = true;
+audio.loop = false;
 audio.autoplay = false;
 //Guarda el archivo de audio en la variable audio
 /* var audio = document.querySelector('.mp3player__audio'); */
@@ -16,10 +16,11 @@ window.addEventListener("load", initMp3Player, false);
 
 var buttonStart = document.querySelector('.mp3player__button');
 var audioPlayer = document.querySelector('.mp3player__audiobox');
-var container = document.querySelector('.mp3player__infocontainer');
+var firstContainer = document.querySelector('.mp3player__infocontainer');
+var secondContainer = document.querySelector('.mp3player__refcontainer');
 
 buttonStart.addEventListener('click', function(){
-    container.style.display = 'none';
+    firstContainer.style.display = 'none';
     context.resume();
 });
 
@@ -29,11 +30,18 @@ audioPlayer.addEventListener('mouseover', function(){
 
 audio.addEventListener('play', function(){
     segundos = Math.trunc(audio.currentTime);
+    secondContainer.style.display = 'none';
     tiempo();
 });
 
 audio.addEventListener('pause', function(){
     segundos = Math.trunc(audio.currentTime);
+    detenerTiempo();
+});
+
+audio.addEventListener('ended', function(){
+    firstContainer.style.display = 'none';
+    secondContainer.style.display = 'flex';
     detenerTiempo();
 });
 
@@ -111,6 +119,11 @@ function tiempo() {
             frameLooper();
         }
         segundos = Math.trunc(audio.currentTime);
+
+        if(audio.ended){
+            secondContainer.style.display = 'flex';
+            console.log("mensaje final");
+        }
         
     },1000);
 }
