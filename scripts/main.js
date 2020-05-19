@@ -10,7 +10,7 @@ var clicked = true;
 var analyserElement = document.querySelector('.mp3player__analyzerrender');
 var canvas, ctx, source, context, analyser, fbc_array, bars, bar_x, bar_width, bar_height;
 
-var segundos = 0, color = "#FFB800", reloj;
+var segundos = 0, color = "#0A55C5", reloj;
 
 window.addEventListener("load", initMp3Player, false);
 
