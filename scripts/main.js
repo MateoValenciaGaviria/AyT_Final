@@ -62,7 +62,7 @@ function frameLooper() {
     analyser.getByteFrequencyData(fbc_array);
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "#FFA500";
+    ctx.fillStyle = "#FFB800";
     bars = 100;
 
     for (var i = 0; i - bars; i++) {
@@ -73,3 +73,4 @@ function frameLooper() {
         ctx.fillRect(bar_x, canvas.height, bar_width, bar_height);
     }
 }
+
