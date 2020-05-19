@@ -1,5 +1,5 @@
 var audio = new Audio();
-audio.src = "../src/audio.mp3";
+audio.src = "./src/audio.mp3";
 audio.controls = true;
 audio.loop = true;
 audio.autoplay = false;
